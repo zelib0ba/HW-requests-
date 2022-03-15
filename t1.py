@@ -15,7 +15,7 @@ def get_hero_id (HeroName):
             return data['id']
 
 def get_hero_iq (id):
-    """получаем IQ супергероя"""
+    """получаем IQ супергероя по ID номеру"""
     search_url = f'{url}{id}/powerstats'
     response = requests.get(url=search_url, timeout=1)
     result = response.json()
