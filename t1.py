@@ -1,4 +1,3 @@
-
 import os
 import requests
 os.system ('cls||clear')
@@ -7,6 +6,7 @@ url = 'https://superheroapi.com/api/2619421814940190/'
 SuperHeroesNames = ['Hulk', 'Captain America', 'Thanos']
 
 def get_hero_id (HeroName):
+    """получаем ID супергероя"""
     search_url = f'{url}search/{HeroName}'
     response = requests.get(url=search_url, timeout=5)
     results = response.json()['results']
@@ -15,6 +15,7 @@ def get_hero_id (HeroName):
             return data['id']
 
 def get_hero_iq (id):
+    """получаем IQ супергероя"""
     search_url = f'{url}{id}/powerstats'
     response = requests.get(url=search_url, timeout=1)
     result = response.json()
